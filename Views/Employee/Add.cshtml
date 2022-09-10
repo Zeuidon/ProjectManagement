@@ -1,0 +1,36 @@
+﻿@model ProjectManagement.Models.ViewModels.AddEmployeeViewModel
+
+
+@{
+}
+
+<br />
+<h1>Add Employee</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">First Name</label>
+        <input type="text" class="form-control" asp-for="FirstName"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Last Name</label>
+        <input type="text" class="form-control" asp-for="LastName"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="EmailId"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Phone Number</label>
+        <input type="number" class="form-control" asp-for="PhoneNo"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Position</label>
+        <input type="text" class="form-control" asp-for="Position"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date of Joining</label>
+        <input type="date" class="form-control" asp-for="JoiningDate"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

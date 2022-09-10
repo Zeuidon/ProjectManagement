@@ -1,0 +1,19 @@
+﻿@model ProjectManagement.Models.ViewModels.AddProjectViewModel
+
+@{
+}
+
+<br />
+<h1>Add Project</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Project Name</label>
+        <input type="text" class="form-control" asp-for="ProjectName"/>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Project Status</label>
+        <input type="text" class="form-control" asp-for="Status"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

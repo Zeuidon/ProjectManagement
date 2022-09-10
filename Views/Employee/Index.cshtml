@@ -1,0 +1,38 @@
+﻿@model List<ProjectManagement.Models.Employee>
+
+@{
+}
+
+<br />
+<h1>Employee List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email ID</th>
+            <th>Phone No.</th>
+            <th>Position</th>
+            <th>Joining Date</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.FirstName</td>
+                <td>@employee.LastName</td>
+                <td>@employee.EmailId</td>
+                <td>@employee.PhoneNo</td>
+                <td>@employee.Position</td>
+                <td>@employee.JoiningDate.ToString("MM-dd-yyyy")</td>
+                <td><a href="Employee/View/@employee.ID">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

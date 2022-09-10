@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjectManagement</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ITCProjectManagement.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg headcol navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">ProjectManagement</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main_nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active"> <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a> </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown">Employee</a>
+                            <ul class="dropdown-menu fade-up">
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">Employee List</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Add">Add Employee</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" data-bs-toggle="dropdown"> Office Manager</a>
+                            <ul class="dropdown-menu fade-up">
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="Index">Project Menu</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Department" asp-action="Index">Department List</a></li>
+                            </ul>
+                        </li>
+                        @*<a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Reports</a>*@
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer id="foot" class="border-top footer text-muted">
+        <div class="foot-container">
+            &copy; 2022 - ITCProjectInventory - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <style type="text/css">
+        .headcol {
+            background-color: black;
+        }
+
+        @@media all and (min-width: 992px) {
+
+            .navbar .dropdown-menu-end {
+                right: 0;
+                left: auto;
+            }
+
+            .navbar .nav-item .dropdown-menu {
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                transition: .3s;
+                margin-top: 0;
+            }
+
+            .navbar .nav-item:hover .nav-link {
+                color: #fff;
+            }
+
+            .navbar .dropdown-menu.fade-down {
+                top: 80%;
+                transform: rotateX(-75deg);
+                transform-origin: 0% 0%;
+            }
+
+            .navbar .dropdown-menu.fade-up {
+                top: 180%;
+            }
+
+            .navbar .nav-item:hover .dropdown-menu {
+                transition: .3s;
+                opacity: 1;
+                visibility: visible;
+                top: 100%;
+                transform: rotateX(0deg);
+            }
+
+            .container {
+                padding-bottom: 22.5rem;
+            }
+
+            /*#foot {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 60px;
+                    }*/
+        }
+    </style>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model List<ProjectManagement.Models.Department>
+
+
+@{
+}
+
+<br />
+<h1>Department List</h1>
+<a class='btn btn-primary btn-sm' href='/Department/Add'>Add Department</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Department Name</th>
+            <th>Department Head</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.DepartmentHead</td>
+                <td>@department.DepartmentName</td>
+                <td><a href="Department/View/@department.DepartmentID">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
